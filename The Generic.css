@@ -1,0 +1,855 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway); /*Raleway font is not generic font, so import from google font*/
+@import url(https://fonts.googleapis.com/css?family=Metal Mania);
+
+@font-face {
+	font-family: "booter-zero-zero";
+	src: url("/fonts/booter-zero-zero.woff2") format("woff2"),       /*Q: diff. between @import and @font-face */
+		 url("/fonts/booter-zero-zero.woff") format("woff");
+    font-weight: normal;
+	font-style: normal;
+  }
+
+  /* google search- @font-face in css, @import url raleway font */
+  /* booter-zero-zero font is not download in local machine; but for hosting we need @font-face()
+     some broswer support woff source, some support woff2, so add both  */
+  /* will it work?
+    @font-face {
+	font-family: "Booter-Zero-Zero";
+	src: url("C:\Users\WALTON\OneDrive\Documents\The Generic (26jan)\booter-zero-zero.zip") format("woff2"),
+		 url("C:\Users\WALTON\OneDrive\Documents\The Generic (26jan)\booter-zero-zero.zip") format("woff"),
+    font-weight: normal ;
+	font-style: normal;
+  } */
+
+*,
+*::after,
+*::before{
+	box-sizing:border-box;
+	font-family: Raleway;   /* this font is not working in the website */
+	color: grey;
+}
+
+html, body{
+	margin:0;
+	padding:0;
+}
+
+.nav ul{
+	margin:0;
+	padding:0;
+}
+
+/* header-home page */
+.main-header{
+	background-color: darkgreen;
+	background-image: url(C:\Users\WALTON\OneDrive\Documents\The Generic (26jan)\img-the generic\img-header1.png);
+	background-size:cover;
+	background-blend-mode: multiply;   /* know the basic */
+	padding-bottom: 10px;
+	padding-top: ;
+
+}
+
+.band-name{
+	font-size: 2.5em;
+	font-family: "booter-zero-zero" ;
+	text-align: center;
+	color: white;
+	margin:0 ;
+	font-weight: normal ;
+}
+
+.text-style{
+    font-weight: bold;
+	text-shadow: 2px 2px darkgrey;
+	font-family: sans-serif ;
+}
+
+/* navigation */
+
+.nav{
+	display:flex;
+	
+	justify-content:space-between;
+	align-items:center;
+	background:black;
+	color:white;
+}
+
+.brand__title{
+	font-size:1.5rem;
+	margin:.5rem;
+}
+
+.nav__lists ul {
+	
+	margin:0;
+	padding:0;
+	display: flex;
+}
+
+.nav__lists li{
+	list-style: none;
+}
+
+.nav__lists li a{
+	text-decoration: none;
+	padding:1rem;
+	color:white;
+    display:block;
+}
+
+.nav__lists li a:hover{
+	color: rgb(0 255 128);
+}
+
+.toggle__button{
+	display:none;
+	flex-direction:column;
+	top:.75rem;
+	right:1rem;
+	position:absolute;
+	justify-content: space-between;
+	height:21px;
+	width:30px;
+}
+
+.toggle__button .bar {
+	height:3px;
+	width:100%;
+	background-color: white;
+	border-radius:10px;
+}
+
+@media (max-width: 400px) {
+	.toggle__button{
+		display:flex;
+	}
+
+	.nav__lists{
+		display:none;
+		width:100%;
+	}
+
+	.nav{
+		flex-direction: column;
+		align-items:flex-start;
+	}
+
+	.nav__lists ul {
+	
+		flex-direction:column;
+		
+		width:100%;
+	}
+
+	.nav__lists li{
+		text-align:center;
+	}
+
+	.nav__lists li a {
+		padding: .5rem 1rem;
+	}
+
+	.nav__lists.active{
+		display:flex;
+	}
+
+}
+
+/*
+.nav li{
+	display: inline;
+}
+
+.nav li a{
+	display:inline-block; /*inline doesn't apply padding-top and padding-bottom*/
+	text-decoration:none;  /*remove the underline from the anchor tag*/
+/*	color: white;  /*font-color*/
+	padding: .5em;
+}
+/*
+.nav li:hover{
+	background-color:grey;
+
+}
+
+.main-nav{
+	text-align:center;
+	font-size: 1.2em ;
+	font-weight: lighter ;
+	border-bottom: 1px solid grey;
+}
+
+.nav li{
+	padding: 0 5%;  
+}*/
+
+/*     / header   */
+
+
+/* home page content-section */
+.content-section{
+	margin: 1em;
+}
+
+.container{
+	max-width: 900px ;
+	margin: 0 auto;  /* margin:auto; use korle content ta left and right side theke center a chole asbe. */
+	padding: 0 1.5rem ;
+}
+
+.section-header{
+	font-family: Metal Mania;
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+	font-size: 2em;
+	margin: 15px;
+}
+
+.header-color {
+	color: rgb(0 255 128);
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.text-hover {
+	color: green;
+	text-decoration: none;
+}
+
+.text-hover:hover{
+    color: rgb(0 255 128);
+}
+
+.home-band-image{
+	float:;   /* push the content in the left side relative to other content  */
+	width: 100%;
+	height: auto;
+	margin: ;
+	border-radius: 0%;
+	cursor: pointer;
+	box-shadow: 0.25em 0.25em 0.75em rgba(0,0,0,.25);
+	border-radius: 0%;
+	border: 1px solid black;
+	margin-top: 2em;  /* padding-top use korle, image ta top a smaller hbe but same jaigai thakbe content */
+}
+
+.yt-video {
+	padding-top: 2em;
+	width: 100%;
+	height: auto;
+	margin-right: 1em;
+}
+
+.song-ind {
+	padding-bottom: 1em;
+}
+/*
+.song-item{
+	display:grid;
+	grid-template-columns: 1fr 1fr;
+	gap:1.5rem;
+} 
+
+.song-item{
+	margin-top: 2em;
+	margin-bottom: 2em;
+} 
+*/
+/*
+@media (max-width: 599px) {
+	.yt-video{
+		margin-left: auto;
+        margin-right: auto;
+        display: block;
+	}
+}
+*/
+@media (min-width: 600px) {
+	.home-band-image{
+		max-width: 300px;
+		height: auto;
+		margin-left:1em;
+	}
+
+    .song-item {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        grid-template-areas: 
+            "title img"
+            "link img"
+            "text img"
+			
+    
+    }
+
+	.song-title {
+        grid-area: title;
+    }
+
+	.song-link {
+        grid-area: link;
+    }
+
+	.home-band-page {
+        grid-area: img;
+    }
+
+	.yt-video {
+		grid-area: img;
+		margin-left:1em;
+	}
+
+	.song-content{
+		padding-top: 2em;
+	}
+
+}
+
+
+/* footer */
+/*
+.main-footer{
+	background-color: aqua;
+	color: white;
+	padding: .5em;  /*  unsolved error 
+	margin-top: 50px;
+}
+
+.main-footer-container {
+	display: flex;
+	align-items: center;
+}
+
+.main-footer-container ul{
+	text-align: end;
+	flex-grow: 1;  /* without flex-grow, text-align is not working. text-align works with ul 
+}
+
+.footer-nav li{
+	padding: 0 .5em;
+}
+
+.footer-nav img{
+	width: 30px;  /* .5em is current size of the font, not image 
+	height: 30px;
+}
+*/
+
+/* footer */
+.footer {
+    background: rgb(54, 51, 51);
+    color: white;
+	font-weight: bold;
+    text-align: center;
+    padding-top: 1em;
+	padding-bottom: 2em;
+    font-size: 1rem;
+	margin-top: 2em;
+
+}
+
+
+.footer-interact {
+	top: 0;
+}
+
+.interact-button{
+	padding: .2em .5em;
+	border-radius: 25px;
+	font-size: 15px;
+	letter-spacing: .2em;
+	font-weight: bold;
+	box-shadow: none;
+
+}
+
+.interact-button:hover {
+	background-color: #555;
+}
+
+.interact-heading {
+	margin: .5em auto;
+}
+
+.footer a { 
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer__link {
+    font-weight: bold;
+	color:rgb(39, 16, 247);
+	margin-bottom: .5em;
+
+}
+
+.footer__link:hover{
+	opacity: .7;
+	color:rgb(54, 43, 161);
+
+}
+
+.social-list__link:hover {
+    opacity: .7;
+	color:rgb(0 255 128);
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+.footer-img {
+	width:1.5em;
+	height:1.5em;
+	padding: 0;
+	margin: 0;
+}
+
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 1em 0 0;
+    padding: 0;
+}
+
+.social-list__item {
+    margin: 0 .5em;
+}
+
+.social-list__link {
+    padding: .5em;
+}
+
+
+/*    / footer  */
+
+
+/*  button  */
+.btn{
+	text-align: center;
+	vertical-align: middle;   /* new thing */
+	padding: 0.5em ;
+	padding-inline:1.3em ;
+	cursor:pointer;
+}
+
+.btn-header{
+	margin: .5em 15% .5em 15%;
+	color: white;
+	background-color: rgba(255, 255, 255, .1);
+	border: 2px solid rgb(0 255 128);
+	border-radius: 0;
+	font-size:1.5em;
+	font-weight: lighter;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.btn-header:hover{
+	background-color: rgba(255, 255, 255, .3);
+}
+
+.link-underline {
+	text-decoration: none;
+}
+
+.btn-play{                           /* imortant code to make any shape desirable */
+	color: rgb(0, 255, 118);
+	padding:0;
+	border-radius: 50%;
+	display: block; /* this content will never be inline with any element in any device-screen */
+	margin: 0 auto;
+	width: 80px;
+	height:80px;
+	font-size: 4em;
+	margin-bottom: .3em;
+}
+
+.btn-primary{
+	color: white;
+	background-color: rgb(0 255 128);
+	border: none;
+	border-radius: 25px;
+	font-weight: bold;
+	box-shadow: .8px .8px grey;
+}
+
+.btn-primary:hover{
+	background-color: green;
+}
+
+.tour-btn {
+	padding: .8em 1.2em;
+	text-align: center;
+	font-size: 12px;
+	align-items: center;
+}
+
+/* about */
+.alert-img {
+	width: 50px;
+	height: auto;
+	display: block;
+	margin: 2em auto;
+}
+
+.alert-header {
+	font-family: Metal Mania;
+	font-weight: normal;
+	color: grey;
+	text-align: center;
+	font-size: 1em;
+	margin: 0 auto;
+	
+}
+
+.alert-button {
+	display:block;
+	align-items: center;
+	padding: .6em 1.5em;
+	background-color: rgb(255, 0, 0);
+	color: white;
+	font-weight: bold;
+	margin: 2em auto;
+	border-radius: 25px;
+	border: none;
+	font-family: Raleway;
+}
+
+.link-under {
+	text-decoration: none;
+}
+
+.alert-button:hover {
+
+	background-color: rgb(0 255 128);
+	box-shadow: 0 0 20px rgba(o, 0, 0, .2);
+}
+
+.form-button:hover {
+	background-color: green;
+	box-shadow: 0 0 20px rgba(o, 0, 0, .2);
+}
+
+
+/* about page-form  */
+.form {
+	margin: 2em auto;
+    align-items: center;
+}
+
+body{
+	min-height: 100vh;  /* 100% of the height of the viewpoint.  without this code, place-content will work different*/
+	display:grid;   /*no impact here*/
+	place-content: center; /* center of the whole container */
+	font-family: "PT Sans Narrow", sans-serif;
+}
+
+.form {
+	display:flex;   /* it will put them next to each other */
+	flex-direction: column;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);  /* rgb() has no comma. 60px will give shadow on more area */
+	border-radius: 20px;
+	overflow: hidden; /*it will erase anything outside the element's box*/  /* By default, the overflow is visible, it renders outside the element's box */
+	width: 80%;  /* not working */
+	max-width: ;
+}
+
+.form-input,
+.form-button {
+	font-family: inherit;
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 10px;
+	letter-spacing: 1.2px; 
+	border: 0;  /* now it looks coooool! couldn't imagine before  */
+}
+
+.form-input{
+	padding: 1.5em;
+}
+
+.form-input::placeholder {
+    opacity: 0.4;
+}
+
+.form-input:focus::placeholder {
+	color: rgb(0 255 138);   /* new thing */    /* but when we click, border arrive  */
+    opacity: 0.85;
+	outline: none;
+}
+
+.form-input:focus {
+	outline: none;    /*  solve this prob by google search:no border focus placeholder   https://www.tutorialrepublic.com/faq/how-to-remove-outline-around-text-input-boxes-in-chrome-using-css.php  */
+}
+
+.form-item:first-of-type {
+	position: relative;
+}
+
+.form-item:first-of-type::after {
+	content: "";
+	position: absolute;  
+	right: 0;
+	left: 0;
+	bottom: 0;
+	height: 1px;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.form-button {
+	background: rgb(0 255 138);
+	display: block;
+	width: 100%;
+	color : white;
+	padding: 1.25em 2em;
+}
+
+.form-item {
+	display: flex;
+	flex-direction:column;  /*  new  thing  */
+}
+
+.get-album {
+	color:#111;
+	font-weight: bold;
+}
+
+.get-album:hover,
+.btn-play:hover {
+	background-color: lightgray;
+}
+
+/* tour    */
+.tour-rows {
+	margin-top: 2em;
+}
+
+.tour-row{
+	border-bottom: 1px solid black;
+	padding-bottom: 1em;
+	margin-bottom: 4em;
+}
+
+.tour-row:last-child{
+	border-bottom:none;  /* new thing */
+}
+
+.tour-item{
+	display: inline-block;
+	padding-right: .5em;
+/*	width: 1000px; by default, display is set as inline, so width will not applied for inline content 
+    display: inline-block; that's why inline-block used*/
+}
+
+.tour-date{
+	color: #555;
+	font-weight: bold;
+	width: ;
+}
+
+/*
+.tour-city{
+	width: 24%;
+}                     ###     inline-block elements have default space around the element, so 
+                              we can't sum up the width exactly 100%.
+
+.tour_arena{            1:32:00    this block of code doesn't work for responsive design 
+	width:42%;
+}
+
+.tour-btn{
+	max-width: 19%; 
+}
+/*max-width used for a reason */
+/*      about page  */
+
+
+/* Store Page */
+.shop-item-title {
+	display: block;  /* using block element, only one content in this horizon and place the content in center. */
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.5em;
+	color: #333;
+    margin-bottom: 15px;
+	padding-top: 10px;
+	
+}
+
+.shop-item-image{
+	height: 250px;
+	width: 250px;    /* fixed the image height */
+}
+
+.shop-item-details{
+	display:flex;   /* is it true? -flex provides space between elements, otherwise it will be one after like inline elements */
+	align-items: center;  
+	padding: 5px;
+}
+
+.shop-item-price{
+	flex-grow: 1;   /*   the content will grow    */
+	color: #333;
+}
+
+.shop-items{
+	display: flex ;  /* applying on the all shop items */
+	flex-wrap: wrap; /* flex-wrap property makes flexbox works like grid, multiple rows if container becomes smaller */
+	justify-content: space-around; 
+}
+
+.shop-item {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+/* Cart */
+.cart-header {
+	font-weight: bold;
+	font-size: 1.25em;
+	color: #333;
+}
+
+.cart-column{
+	border-bottom: 1px solid black;
+	margin-right: 1.5em;  /*  margin will increase if the container width is increased. 10px does not do this responsiveness */
+	padding-bottom: 10px;
+	margin-top:10px; 
+}    
+
+/*
+.cart-row {
+	display: flex;                        
+	justify-content: space-around;
+}
+justify-content provides equal spacing among the heading and it will grab the whole horizontal axis. */
+
+.cart-row{
+	display: flex;
+}
+
+.cart-item {
+	width: 45%;
+}
+
+.cart-price {
+	width: 20%;
+	font-size: 1.2em;
+	color: #333;
+}
+                        /* inline-block elements have space arount the element, so 
+                             we can't sum up the width exactly 100%.
+						   but flexbox has no default spacing, so we can sum up width to 100%  */
+.cart-quantity {
+	width: 35%;
+
+}
+
+.cart-column {
+	display: flex;
+	align-items : center;
+}
+
+.cart-item-title {
+	color: #333;
+	margin-left: .5em;
+	font-size: 1.2em;
+}
+
+.cart-item-image {
+	width: 75px;
+	height: auto;
+	border-radius: 10px;
+}
+
+@media (min-width: 600px){
+	.cart-item-image{
+		width: 150px;
+		height: auto;
+	
+	}
+}
+
+.btn-danger {
+	color: white;
+	background-color: #EB5757;
+	border: none;
+	border-radius: .3em;
+	font-weight: bold;
+}
+
+.btn-danger:hover{
+	background-color: #CC4C4C;
+}
+
+.cart-quantity-input {
+	height: 34px;
+	width: 50px;
+	border-radius: 5px;
+	border: 1px solid #56CCF2;
+	background-color: #eee;
+	padding:0;
+	text-align: center;
+	font-size: 1.2em;
+	margin-right: 25px;
+}
+
+/*
+.cart-item-responsive{
+	display: flex;
+	flex-direction: column;     doesn't work-my self-code
+}
+*/
+
+.cart-row:last-child{
+	border-bottom: 1px solid black;  /* for this we need to have all of our cart-row div under a parent div element, here it is cart-items. */
+}
+
+.cart-row:last-child .cart-column {
+	border: none;
+}
+
+@media (max-width: 600px) {
+	.content-responsive {   /* self-code */
+		font-size: .7em;
+	}
+
+    .cart-column{
+		margin:none;   /*doesn't work */
+	}
+}
+
+.cart-total {
+	text-align : end;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+.cart-total-title {
+	font-weight: bold;
+	font-size : 1.5em;
+	color: black;
+	margin-right: 20px;
+}
+
+.cart-total-price {
+	color: black;
+	font-size: 1.1em;
+}
+
+.btn-purchase {
+	display: block;
+	margin: 40px auto 80px auto;
+	font-size: 1.5em;
+}
+
+
+	https://www.youtube.com/watch?v=YeFzkC2awTM&list=PLZlA0Gpn_vH-cEDOofOujFIknfZZpIk3a&index=11
+https://www.youtube.com/watch?v=kMT54MPz9oE&t=2658s
+https://stackoverflow.com/questions/14676613/how-to-import-google-web-font-in-css-f
